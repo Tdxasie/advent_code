@@ -1,0 +1,46 @@
+with open("input.txt", "r") as infile:
+    lines = infile.read().splitlines()
+
+tot = 0
+
+for line in lines:
+    line = [int(i) for i in line]
+
+    a = max(line[:-11])
+    shift = line.index(a)
+    print(shift)
+    b = max(line[line.index(a, shift) + 1 : -10])
+    shift = line.index(b, shift + 1)
+    print(shift)
+    c = max(line[line.index(b, shift) + 1 : -9])
+    shift = line.index(c, shift + 1)
+    print(shift)
+    d = max(line[line.index(c, shift) + 1 : -8])
+    shift = line.index(d, shift + 1)
+    print(shift)
+    e = max(line[line.index(d, shift) + 1 : -7])
+    shift = line.index(e, shift + 1)
+    print(shift)
+    f = max(line[line.index(e, shift) + 1 : -6])
+    shift = line.index(f, shift + 1)
+    print(shift)
+    g = max(line[line.index(f, shift) + 1 : -5])
+    shift = line.index(g, shift + 1)
+    print(shift)
+    h = max(line[line.index(g, shift) + 1 : -4])
+    shift = line.index(h, shift + 1)
+    print(shift)
+    i = max(line[line.index(h, shift) + 1 : -3])
+    shift = line.index(i, shift + 1)
+    print(shift)
+    j = max(line[line.index(i, shift) + 1 : -2])
+    shift = line.index(j, shift + 1)
+    print(shift)
+    k = max(line[line.index(j, shift) + 1 : -1])
+    shift = line.index(k, shift + 1)
+    print(shift)
+    l = max(line[line.index(k, shift) + 1 :])
+    print(int(f"{a}{b}{c}{d}{e}{f}{g}{h}{i}{j}{k}{l}"))
+    tot += int(f"{a}{b}{c}{d}{e}{f}{g}{h}{i}{j}{k}{l}")
+
+print(tot)
